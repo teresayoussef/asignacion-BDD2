@@ -10,5 +10,6 @@ def cualidades_EIU(conexion, consulta):
         df = df.groupby(['respuesta']).size().reset_index(name='counts')
         squarify.plot(label=df['respuesta'], sizes=df['counts'], alpha=.7)
         plt.show()
+        plt.title("Cualidades del EIU")
     else: 
         pass
