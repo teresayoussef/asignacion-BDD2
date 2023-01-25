@@ -20,8 +20,8 @@ def limpieza_datos(df):
         df[column] = df[df[column].str.strip().astype(bool)] 
     return df
 
-def main() -> None:
-    conexion = sqlite3.connect('data/data.s3db')
+if __name__ == '__main__':
+    conexion = sqlite3.connect('base de datos/dataset_prueba_3.s3db')
     p1.obtener_respuestas(conexion, pregunta1.obtener_respuestas)
     p1.obtener_sexo_encuestados_EIU(conexion, pregunta1.obtener_sexo_encuestados_EIU)
     p1.obtener_sexo_encuestados_no_EIU(conexion, pregunta1.obtener_sexo_encuestados_no_EIU)
@@ -30,6 +30,4 @@ def main() -> None:
     p2.cualidades_EIU(conexion, pregunta2.cualidades_EIU)
     p3.estudiantes_mas_votados_por_la_comunidad(conexion, pregunta3.estudiantes_mas_votados_por_la_comunidad)
 
-
-if __name__ == '__main__':
-    main()
+    
